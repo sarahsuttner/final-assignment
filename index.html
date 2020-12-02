@@ -1,24 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>
-      Prototype
-  </title>
+<!-- meta tags, links to css, etc. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Prototype</title>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 </head>
 
-<body>
-    <h1> Take This Quiz To Find Out Your Ideal Pet!</h1>
-		<p>Life can get pretty stressful...especially in times like these.
-		Who doesn't want a cute companion to bring some fun to life! Leave the heavy lifting to us: We'll pick out
-	your perfect pet based on a few short questions about your personality!<br>
-	Let's get started...</p>
 
+<body>
+ <div class="firstpage">
+  <div class="headerbackground">
+    <h1 class="header"> Take This Quiz To Find Out Your Ideal Pet!</h1>
+  </div>
+
+  <div class="bodybackground">
+		<p class="subheader">Life can get pretty stressful...especially in times like these.
+		Who doesn't want a cute companion to bring some fun to life! Leave the heavy lifting to us: We'll pick out
+	your perfect pet based on a few short questions about your personality!</p><br>
+	<p class="start">Let's get started...</p>
+
+  <div class="text">
         <form id="myForm">
 					What's your favorite color? <input type="text" id="color"><br>
 					What's your favorite food? <input type="text" id="food"><br>
 					What's your favorite flavor of ice cream? <input type="text" id="flavor"><br>
 					How old are you? <input type="text" id="age"><br>
-					What city are you from? <input type="text" id="city"><br>
+					What city were you born in? <input type="text" id="city"><br>
 					What's your favorite season? <input type="text" id="season"><br>
 
 Do you have kids?
@@ -142,17 +156,29 @@ Are you in a relationship?
 
 </form>
 
-
 <br>
+<div class="buttoncenter">
+<input class="button" type="submit" id="submitButton" value="CALCULATE MY RESULTS">
 
-<input type="submit" id="submitButton">
-
-
+</div>
+</div>
+</div>
+</div>
 
     <script src=
 "https://code.jquery.com/jquery-2.2.4.min.js">
   </script>
 
+<div>
+
+  <script>
+  $(document).ready(function(){
+    $(".button").click(function(){
+      $(".firstpage").hide();
+    });
+  });
+  </script>
+</div>
 
 	<div id="answer"></div>
 		<script type="text/javascript">
@@ -171,16 +197,14 @@ $('#submitButton').on('click', function() {
 		var city = $('#city').val();
 		var season = $('#season').val();
 
-	$('#answer').html("Your results... are actually nothing. This quiz, in reality, is useless. The information you entered, however, is very useful. We now know that this page is now your favorite color, "+ color +". Your favorite food is "+ food +
-										". Your favorite ice cream flavor is "+ flavor +". You are "+ age +" years old " +
-										". You are from " + city + ". Your favorite season is " + season + ". More importantly, here are some pretty private things we now know:")
+	$('#answer').html("Your results... are actually nothing. This quiz, in reality, is useless. The information you entered, however, is very useful. We now know that your favorite color is "+ color +". Your favorite food is "+ food +
+										". So, potentially, we could tell advertising companies to send some " + food + " ads your way, in hopes you'll interact with them. Your favorite ice cream flavor is "+ flavor +". You are "+ age +" years old " +
+										". You are from " + city + "... which might just happen to be an answer to a security question. Your favorite season is " + season + ". More importantly, here are some pretty private things we now know:")
 
 	$('body').css({'background-color':color})
 			  });
 
-
     </script>
-
 
 			<div id="output2"></div>
 				<script type="text/javascript">
@@ -208,24 +232,22 @@ $('#submitButton').on('click', function() {
 							});
 				</script>
 
-			<div id="output4"></div>
-									<script type="text/javascript">
-											// Check the radio button value.
-											$('#submitButton').on('click', function() {
+	<div id="output4"></div>
+      <script type="text/javascript">
+    // Check the radio button value.
+      $('#submitButton').on('click', function() {
 
-											output4 =
-												$('input[name=political]:checked',
-														'#myForm').val();
-											document.querySelector(
-												'#output4').textContent = "You tend to vote with " + output4 + " party.";
-								});
-					</script>
-
+        output4 =
+          $('input[name=political]:checked',
+              '#myForm').val();
+        document.querySelector(
+          '#output4').textContent = "You tend to vote with " + output4 + " party.";
+        });
+          </script>
 
 	<div id="output5"></div>
 	<script type="text/javascript">
-																// Check the radio button value.
-					$('#submitButton').on('click', function() {
+      	$('#submitButton').on('click', function() {
 
 				output5 =
 							$('input[name=gender]:checked',
@@ -233,6 +255,8 @@ $('#submitButton').on('click', function() {
 								document.querySelector(
 					'#output5').textContent = "You identify as " + output5 + ".";
 				});
+
+
 	</script>
 
 <div id="output6"></div>
