@@ -165,6 +165,7 @@ Are you in a relationship?
 </div>
 </div>
 
+
     <script src=
 "https://code.jquery.com/jquery-2.2.4.min.js">
   </script>
@@ -180,7 +181,40 @@ Are you in a relationship?
   </script>
 </div>
 
-	<div id="answer"></div>
+<div class="resultsheader" id="resultsheader">
+  <script type="text/javascript">
+    // Check the radio button value.
+      $('#submitButton').on('click', function() {
+
+        $('#resultsheader').html("Your results are...")
+
+        });
+  </script>
+</div>
+
+  <div class="resultssubheader" id="resultssubheader">
+    <script type="text/javascript">
+      // Check the radio button value.
+        $('#submitButton').on('click', function() {
+
+          $('#resultssubheader').html("Actually nothing. ")
+
+          });
+    </script>
+</div>
+
+    <div class="resultssubsubheader" id="resultssubsubheader">
+      <script type="text/javascript">
+        // Check the radio button value.
+          $('#submitButton').on('click', function() {
+
+            $('#resultssubsubheader').html("This quiz, in reality, is useless. The information you entered, however, is very useful. ")
+
+            });
+      </script>
+      </div>
+
+	<div class="answerto" id="answer">
 		<script type="text/javascript">
 $('#color').val(" ");
 $('#food').val(" ");
@@ -197,16 +231,30 @@ $('#submitButton').on('click', function() {
 		var city = $('#city').val();
 		var season = $('#season').val();
 
-	$('#answer').html("Your results... are actually nothing. This quiz, in reality, is useless. The information you entered, however, is very useful. We now know that your favorite color is "+ color +". Your favorite food is "+ food +
-										". So, potentially, we could tell advertising companies to send some " + food + " ads your way, in hopes you'll interact with them. Your favorite ice cream flavor is "+ flavor +". You are "+ age +" years old " +
-										". You are from " + city + "... which might just happen to be an answer to a security question. Your favorite season is " + season + ". More importantly, here are some pretty private things we now know:")
+
+	$('#answer').html("We now know that the top of the page is now your favorite color, "+ color +". Your favorite food is "+ food +
+										". So, potentially, we could tell advertising companies to send some " + food + " ads your way, in hopes you'll interact with them. Your favorite ice cream flavor is "+ flavor +". You are "+ age +" years old, meaning that you will probably have material interests that are similar to others in your age demographic. You are from " + city + "... which might just happen to be an answer to one of your security questions. Lastly, your favorite season is "+ season+".")
+
+
 
 	$('body').css({'background-color':color})
 			  });
 
     </script>
+</div>
 
-			<div id="output2"></div>
+    <div class="moreimportant" id="moreimportant">
+      <script type="text/javascript">
+        // Check the radio button value.
+          $('#submitButton').on('click', function() {
+
+            $('#moreimportant').html(" More importantly, here are some pretty private things we now know: ")
+
+            });
+      </script>
+</div>
+
+			<div class="outputs" id="output2">
 				<script type="text/javascript">
 				// Check the radio button value.
 						$('#submitButton').on('click', function() {
@@ -218,8 +266,9 @@ $('#submitButton').on('click', function() {
 										'#output2').textContent = "You " + output2 + " have kids.";
 						});
 				</script>
+</div>
 
-			<div id="output3"></div>
+			<div class="outputs" id="output3">
 				<script type="text/javascript">
 					// Check the radio button value.
 						$('#submitButton').on('click', function() {
@@ -231,8 +280,9 @@ $('#submitButton').on('click', function() {
 										'#output3').textContent = "You're currently " + output3 + ".";
 							});
 				</script>
+      </div>
 
-	<div id="output4"></div>
+  <div class="outputs" id="output4">
       <script type="text/javascript">
     // Check the radio button value.
       $('#submitButton').on('click', function() {
@@ -244,8 +294,9 @@ $('#submitButton').on('click', function() {
           '#output4').textContent = "You tend to vote with " + output4 + " party.";
         });
           </script>
+</div>
 
-	<div id="output5"></div>
+	<div class="output5" id="output5">
 	<script type="text/javascript">
       	$('#submitButton').on('click', function() {
 
@@ -258,25 +309,37 @@ $('#submitButton').on('click', function() {
 
 
 	</script>
+</div>
 
-<div id="output6"></div>
+  <div class="conclusion2" id="conclusion2">
+    <script type="text/javascript">
+      // Check the radio button value.
+        $('#submitButton').on('click', function() {
+
+          $('#conclusion2').html("This is all very personal information that we, as uers, are conditioned to hand over without a second thought. Companies can do whatever they want with this data to make profit, which threatens our financial and emotional autonomy. ")
+
+          });
+    </script>
+</div>
+
+
+<div class="conclusion" id="conclusion">
 	<script type="text/javascript">
 																// Check the radio button value.
 					$('#submitButton').on('click', function() {
 
-$('#output6').html("Though this activity was framed as a fun quiz," +
+$('#conclusion').html("Though this activity was framed as a fun quiz," +
 										" the habit of ignorantly releasing our data with little to no thought is problematic and common." +
-										" The term gamification means to utilize game-like principles of tasks and rewards in real-world scenarios." +
-										" - a task like filling out this quiz to receive a result, for example. The information you handed over could be used for targeted advertisements, filter bubbles, and biased media." +
-										" The gamification used in applications like brain-training sites or fitness apps is familiar and often incredibly effective in achieving results " +
+										" The term gamification means to utilize game-like principles of tasks and rewards in real-world scenarios..." +
+										"a task like filling out this quiz to receive a result, for example. The information you handed over could be used for targeted advertisements, filter bubbles, and biased media." +
+										" The gamification used in applications like brain-training sites or fitness apps is familiar and often incredibly effective in achieving results. " +
 										" What we don't consider, however, is who receives this data and what they do with it. More often than not," +
 										" the quantification of self derived from this data is used to aggregate personal micro data into more accurate predictions regarding larger demographics," +
-										" allowing corporations and individuals in charge to govern our bodies, minds, and self perceptions through their invented and implemented goals.")
+										" allowing corporations and individuals in charge to govern our bodies, minds, and self-perceptions through their invented and implemented goals.")
 
 				});
 	</script>
-
-
+</div>
 
 </body>
 </html>
